@@ -1,4 +1,4 @@
-import { ContinentCard } from "components/continent-card";
+import { ContinentCard } from "components/continent-card/continent-card";
 import { useGetContinents } from "hooks/use-get-continents";
 
 function App() {
@@ -6,26 +6,31 @@ function App() {
     useGetContinents();
 
   if (isLoadingContinents) {
-    return <>Loading...</>;
+    return (
+      <div role="status" aria-live="polite" className="text-center mt-8">
+        <span className="sr-only">Loading continents...</span>
+        Loading...
+      </div>
+    );
   }
 
   return (
     <main className="bg-blue-2 w-full h-screen">
-      <span className="font-bold text-3xl text-center">
+      <header className="font-bold text-3xl text-center mt-4" role="banner">
         <h1>Continents</h1>
-      </span>
-      <div className="space-y-5 p-6 overflow-x-hidden">
-        {continentList?.continents?.map((item) => {
-          return (
-            <ContinentCard
-              key={item.code}
-              name={item.name}
-              continentCode={item.code}
-            />
-          );
-        })}
-      </div>
-      {/* show country details popup */}
+      </header>
+      <section
+        className="space-y-5 p-6 overflow-x-hidden"
+        aria-label="List of continents"
+      >
+        {continentList?.continents?.map((item) => (
+          <ContinentCard
+            key={item.code}
+            name={item.name}
+            continentCode={item.code}
+          />
+        ))}
+      </section>
     </main>
   );
 }
