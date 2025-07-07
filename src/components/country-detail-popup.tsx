@@ -76,7 +76,7 @@ export const CountryDetailPopup = ({ isOpen, onClose, countryCode }: Props) => {
       aria-modal="true"
     >
       <div
-        className="bg-white rounded-lg shadow-lg w-[80%] h-[80%]  relative flex flex-col"
+        className="bg-white rounded-lg shadow-lg md:w-[50%] w-[80%] h-[80%]  relative flex flex-col"
         ref={modalRef}
       >
         <div className="flex justify-between bg-blue-1 rounded-t-lg h-[10%] items-center px-3 shrink-0">
@@ -102,6 +102,15 @@ export const CountryDetailPopup = ({ isOpen, onClose, countryCode }: Props) => {
             <div className="text-center text-lg font-medium">Loading...</div>
           ) : (
             <>
+              <div className="bg-blue-2 w-full rounded-lg p-2 border border-grey-1 shadow-md font-medium">
+                <span className="text-blue-1">Capital city</span>
+                {countryDetails?.country?.capital ? (
+                  <div>{countryDetails?.country?.capital}</div>
+                ) : (
+                  <NothingToShow />
+                )}
+              </div>
+
               <div className="bg-blue-2 w-full rounded-lg p-2 border border-grey-1 shadow-md font-medium">
                 <span className="text-blue-1">Currency</span>
                 {countryDetails?.country?.currency ? (

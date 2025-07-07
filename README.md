@@ -13,9 +13,12 @@ This project displays a list of countries grouped by continents using a clean an
 
 ## Features
 
-- The list is grouped by Continent, showing the name of the continent and a corresponding list of countries,
-- An individual country can be drilled down by clicking on it in the UI. Apopup is displayed on clicking each country.
+- The list is grouped by Continent,which can be opened / closed. 
+- An individual country can be drilled down by clicking on it in the UI. A popup is displayed on clicking each country.
 - Tailwind css is used to give responsiveness.
-- Added unit tests
+- Unit test cases
+- Accessibility ensured
 
-## Things to do
+## Things to do in future
+- 'Move to top' button, when clicked will scroll to the top
+- A search for the country
