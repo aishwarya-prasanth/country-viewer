@@ -24,11 +24,7 @@ export const ContinentCard = ({ name, continentCode }: Props) => {
         <div className="text-2xl fomt-semibold flex justify-between items-center">
           <span>{name}</span>
           <img
-            src={
-              isCardOpen
-                ? "src\\app\\assets\\chevron-up.png"
-                : "src\\app\\assets\\chevron-down.png"
-            }
+            src={isCardOpen ? "/chevron-up.png" : "/chevron-down.png"}
             height={14}
             width={14}
             alt={

@@ -38,7 +38,7 @@ export const CountryCard = ({
         data-testid="capital"
       >
         <img
-          src="src\app\assets\capital.png"
+          src="/capital.png"
           width={"15px"}
           height={"15px"}
           alt="capital icon"
